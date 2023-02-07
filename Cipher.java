@@ -13,11 +13,9 @@ public class Cipher
         String outputString = "";
         
         // for all chars in the input string
-        for (int i = 0; i < inputString.length(); i++)   
-        {
-
-        }
-
+        for (int i = 0; i < inputString.length(); i++){
+            char replaceCharForEncrypt=inputString.charAt(i);
+            outputString=outputString+replaceChar(replaceCharForEncrypt,true);}
         return outputString;
     }
 
@@ -25,9 +23,9 @@ public class Cipher
         
         // output string will be collected in this variable, one char at a time
         String outputString = "";
-        
-        replaceChar('a',true);
-        
+        for(int i=0;i<inputString.length();i++){
+           char replaceCharForDecrypt=inputString.charAt(i);
+           outputString=outputString+replaceChar(replaceCharForDecrypt,false);}
         return outputString;
     }
 
@@ -42,7 +40,7 @@ public class Cipher
             for (int i = 0; i < ORIGINAL_ALPHABET.length(); i++)   
             {
                 if(ORIGINAL_ALPHABET.charAt(i) == inputChar) {
-
+                    return CIPHER_ALPHABET.charAt(i);
                 }
             }
         }
